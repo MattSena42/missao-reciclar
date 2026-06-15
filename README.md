@@ -1,13 +1,14 @@
 # ♻️ Missão Reciclar
 
-> Jogo educativo mobile exclusivo para **Android**, desenvolvido como Trabalho de Conclusão de Curso (TCC) do curso Técnico em Desenvolvimento de Sistemas na **ETEC Machado de Assis** (Caçapava/SP). O projeto utiliza a gamificação para o ensino de coleta seletiva e conscientização ambiental.
+> Jogo educativo mobile exclusivo para **Android**, desenvolvido como Trabalho de Conclusão de Curso (TCC) do curso Técnico em Desenvolvimento de Sistemas na **ETEC Machado de Assis** (Caçapava/SP).
+> O projeto utiliza a gamificação para o ensino de coleta seletiva e conscientização ambiental.
 
 ---
 
 ## 📌 Funcionalidades
 
 - ✅ **Física e Colisão 2D:** Mecânica de queda livre de resíduos sólidos e interação com lixeiras.
-- ✅ **Curva de Dificuldade:** Aceleração de queda de objetos e perda de cores para estimular a memorização das formas.
+- ✅ **Curva de Dificuldade:** Aceleração de queda de objetos e perda de cores para estimular a memorização.
 - ✅ **Sistema de Tutorial:** Passo a passo em vídeo integrado diretamente na interface para novos jogadores.
 - ✅ **Modo Offline:** Jogabilidade e registro de recordes locais imunes à falta de internet.
 - ✅ **Ranking Global:** Sincronização em nuvem e placar mundial competitivo em tempo real.

@@ -5,6 +5,13 @@
 
 ---
 
+## 📄 Documentação e Demonstração
+
+- 📝 **Documentação Completa (PDF):** O arquivo de texto acadêmico e especificações técnicas está disponível na raiz deste repositório como `DTCC - Missão Reciclar.pdf`.
+- 🌐 **Landing Page Oficial:** Acesse para ver o Ranking ao vivo e baixar o APK (Android) direto no celular: [etecmachadodeassis.com/projeto/missaoreciclar/](https://etecmachadodeassis.com/projeto/missaoreciclar/)
+
+---
+
 ## 📌 Funcionalidades
 
 - ✅ **Física e Colisão 2D:** Mecânica de queda livre de resíduos sólidos e interação com lixeiras.
@@ -41,13 +48,6 @@
 
 5. Execute o aplicativo em um emulador Android ou dispositivo físico:
     flutter run
-
----
-
-## 📄 Documentação e Demonstração
-
-- 📝 **Documentação Completa (PDF):** O arquivo de texto acadêmico e especificações técnicas está disponível na raiz deste repositório como `DTCC - Missão Reciclar.pdf`.
-- 🌐 **Landing Page Oficial:** Acesse para ver o Ranking ao vivo e baixar o APK (Android) direto no celular: [etecmachadodeassis.com/projeto/missaoreciclar/](https://etecmachadodeassis.com/projeto/missaoreciclar/)
 
 ---
 

@@ -8,7 +8,7 @@
 ## 📄 Documentação e Demonstração
 
 - 📝 **Documentação Completa (PDF):** O arquivo de texto acadêmico e especificações técnicas está disponível na raiz deste repositório como `DTCC - Missão Reciclar.pdf`.
-- 🌐 **Landing Page Oficial:** Acesse para ver o Ranking ao vivo e baixar o APK (Android) direto no celular: [etecmachadodeassis.com/projeto/missaoreciclar/](https://etecmachadodeassis.com/projeto/missaoreciclar/)
+- 🌐 **Landing Page Oficial:** Acesse para ver o Ranking ao vivo e baixar o APK (Android) direto no celular: [mattsena42.github.io/missao-reciclar/](https://mattsena42.github.io/missao-reciclar/)
 
 ---
 

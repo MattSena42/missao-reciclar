@@ -63,6 +63,7 @@
             font-family: var(--fonte-titulo); 
             letter-spacing: 2px;
             margin: 0;
+            font-weight: normal;
         }
 
         section {
@@ -145,6 +146,7 @@
         .hero-text p {
             font-size: 1.25rem; /* Aumenta a fonte especificamente do parágrafo da hero */
             margin-bottom: 1.5rem;
+            text-align: center;
         }
 
         .hero-image {
@@ -267,11 +269,14 @@
         }
 
         .feedback-form {
+            max-width: 600px; 
+            margin: 0 auto;
+        }
+
+        .feedback-form form {
             display: flex;
             flex-direction: column;
             gap: 15px; 
-            max-width: 600px; 
-            margin: 0 auto;
         }
 
         .feedback-form p { margin: 0; padding: 0; }

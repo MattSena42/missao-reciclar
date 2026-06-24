@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Missão Reciclar - Salve o Planeta Jogando!</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Protest+Riot&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    
+    <style>
+        /* ==========================================
+           1. FONTES CUSTOMIZADAS
+           ========================================== */
+        @font-face {
+            font-family: 'Archive';
+            src: url('./assets/Archive.otf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+                
+        /* ==========================================
+           2. VARIÁVEIS DE TEMA (Paleta de Cores)
+           ========================================== */
+        :root {
+            --laranja: #FF5D28;
+            --azul-acinzentado: #607999;
+            --azul-claro: #D9F3FF;
+            --azul-marinho: #0D4A75;
+            
+            --fonte-titulo: 'Protest Riot', sans-serif;
+            --fonte-texto: 'Archive', sans-serif;
+        }
+
+        /* ==========================================
+           3. RESET E CONFIGURAÇÕES GERAIS
+           ========================================== */
+        * {
+            box-sizing: border-box; /* Garante que padding não quebre o tamanho das caixas */
+        }
+
+        html, body {
+            overflow-x: hidden; /* Evita rolagem horizontal indesejada */
+            width: 100%;
+        }
+        
+        body {
+            font-family: var(--fonte-texto); 
+            background-color: var(--azul-claro); 
+            background-image: url('./assets/desktop.png');
+            background-size: cover; 
+            background-position: center top; 
+            background-attachment: fixed; /* Cria o efeito paralaxe leve */
+            color: var(--azul-marinho); 
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        h1, h2, h3 {
+            font-family: var(--fonte-titulo); 
+            letter-spacing: 2px;
+            margin: 0;
+        }
+
+        section {
+            padding: 2rem 5%;
+            max-width: 1200px; 
+            margin: 0 auto; /* Centraliza o conteúdo na tela */
+        }
+
+        /* ==========================================
+           4. CABEÇALHO (HEADER & MENU)
+           ========================================== */
+        header {
+            background-color: var(--azul-marinho); 
+            color: white;
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky; /* Mantém o menu preso no topo ao rolar a página */
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        }
+
+        header h1 {
+            color: var(--laranja);
+            font-size: 2rem;
+        }
+
+        nav a {
+            color: white; 
+            text-decoration: none;
+            margin-left: 25px;
+            font-family: var(--fonte-titulo);
+            font-size: 1.3rem;
+            letter-spacing: 2px;
+            transition: transform 0.2s, color 0.3s;
+        }
+        
+        nav a:hover {
+            color: var(--laranja); 
+            transform: scale(1.1); 
+            display: inline-block;
+        }
+        
+        .logo-site {
+            height: 70px !important; 
+            max-height: 70px !important;
+            width: auto !important; 
+            max-width: 250px !important; 
+            display: block !important;
+        }
+
+        /* ==========================================
+           5. SEÇÃO PRINCIPAL
+           ========================================== */
+        .hero {
+            display: flex;
+            flex-wrap: wrap; /* Permite que os itens quebrem linha no celular */
+            align-items: center;
+            justify-content: space-between; 
+            gap: 2rem;
+        }
+
+        .hero-text {
+            flex: 1;
+            min-width: 300px;
+            text-align: center;
+        }
+
+        .hero-text h2 {
+            font-size: 3.5rem;
+            color: var(--laranja);
+            line-height: 1.1;
+            margin-bottom: 1rem;
+        }
+
+        .hero-image {
+            flex: 1;
+            min-width: 300px;
+            text-align: right; 
+        }
+
+        /* Estilização dos Botões */
+        .btn {
+            display: inline-block;
+            background-color: var(--laranja);
+            color: white;
+            padding: 12px 24px;
+            text-decoration: none;
+            font-family: var(--fonte-titulo);
+            font-size: 1.2rem;
+            border-radius: 8px; 
+            margin-top: 20px;
+            transition: transform 0.2s, background-color 0.2s;
+            border: 2px solid transparent;
+        }
+
+        .btn:hover {
+            background-color: #e54b17;
+            transform: scale(1.02); 
+            color: white;
+        }
+        
+        .btn-secundario {
+            background-color: var(--azul-marinho) !important;
+        }
+
+        .btn-secundario:hover {
+            background-color: #082d47 !important;
+        }
+
+        /* ==========================================
+           6. SEÇÃO DE RANKING (Tabela Supabase)
+           ========================================== */
+        .ranking-section {
+            background-color: var(--azul-marinho); 
+            border: 4px solid var(--laranja);
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.4); 
+            margin: 2rem auto;
+            max-width: 800px; 
+        }
+
+        .ranking-section h2 {
+            text-align: center;
+            color: var(--laranja);
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            text-shadow: 3px 3px 0px #051e33;
+        }
+
+        .arcade-screen {
+            background-color: #051e33;
+            border-radius: 10px;
+            padding: 1rem;
+            box-shadow: inset 0 0 20px rgba(0,0,0,0.8); /* Efeito de tela afundada de fliperama */
+            max-height: 450px; 
+            overflow-y: auto; /* Adiciona rolagem apenas se tiver muitos jogadores */
+        }
+
+        /* Customização da barra de rolagem */
+        .arcade-screen::-webkit-scrollbar { width: 10px; }
+        .arcade-screen::-webkit-scrollbar-track { background: #051e33; }
+        .arcade-screen::-webkit-scrollbar-thumb { background: var(--laranja); border-radius: 5px; }
+
+        .arcade-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-family: var(--fonte-titulo);
+            font-size: 1rem;
+            color: var(--azul-claro);
+        }
+
+        .arcade-table th, .arcade-table td {
+            padding: 8px 2px;
+            text-align: left;
+            border-bottom: 1px dashed rgba(255, 255, 255, 0.2); 
+        }
+
+        .arcade-table th { 
+            color: var(--laranja); 
+            position: sticky; /* Fixa o cabeçalho da tabela no topo ao rolar */
+            top: -16px;
+            background-color: #051e33;
+            border-bottom: 2px solid var(--laranja);
+        } 
+        
+        /* Destaques para o Top 3 */
+        .rank-gold td { color: #FFD700; font-size: 1.3rem; text-shadow: 0 0 5px rgba(255,215,0,0.5); }
+        .rank-silver td { color: #C0C0C0; font-size: 1.2rem; }
+        .rank-bronze td { color: #CD7F32; font-size: 1.1rem; }
+
+        /* ==========================================
+           7. SEÇÃO DE FEEDBACK (Formulário)
+           ========================================== */
+        .feedback-section {
+            background-color: var(--azul-marinho); 
+            color: white; 
+            border-radius: 20px; 
+            padding: 2rem; 
+            margin: 2rem auto; 
+            text-align: center;
+            max-width: 800px !important; 
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            border: 4px solid var(--laranja);
+        }
+
+        .feedback-section h2 {
+            font-size: 2.5rem;
+            color: var(--laranja);
+            margin-bottom: 1rem;
+            text-shadow: 3px 3px 0px #051e33;
+        }
+
+        .feedback-form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px; 
+            max-width: 600px; 
+            margin: 0 auto;
+        }
+
+        .feedback-form p { margin: 0; padding: 0; }
+
+        .feedback-form input:not([type="submit"]), 
+        .feedback-form textarea {
+            padding: 15px;
+            border: none;
+            border-radius: 8px;
+            font-family: var(--fonte-texto);
+            width: 100%;
+            box-sizing: border-box;
+            background-color: #f0f4f8;
+        }
+
+        .feedback-form input[type="submit"] {
+            background-color: var(--laranja);
+            color: white;
+            border: none;
+            padding: 15px;
+            font-family: var(--fonte-titulo);
+            font-size: 1.2rem;
+            border-radius: 8px;
+            cursor: pointer;
+            width: 100%;
+            transition: background-color 0.2s;
+        }
+
+        .feedback-form input[type="submit"]:hover { background-color: #e54b17; }
+
+        span.wpcf7-not-valid-tip, div.wpcf7-response-output {
+            font-family: var(--fonte-texto);
+            font-size: 0.9rem;
+            margin-top: 10px;
+        }
+
+        /* ==========================================
+           8. RODAPÉ
+           ========================================== */
+        footer {
+            background-color: var(--azul-marinho);
+            color: var(--azul-claro);
+            text-align: center;
+            padding: 2rem;
+            margin-top: 2rem;
+            font-size: 0.9rem; 
+        }
+        
+        footer p { margin-bottom: 5px; }
+        footer a { color: var(--laranja); text-decoration: none; font-weight: bold; }
+
+        /* ==========================================
+           9. RESPONSIVIDADE (Telas menores/Celulares)
+           ========================================== */
+        @media (max-width: 768px) {
+            .hero-text h2 { font-size: 2.5rem; }
+            
+            header { justify-content: center; }
+            nav { display: none; } /* Esconde o menu no celular para simplificar */
+            
+            .arcade-table { font-size: 0.95rem; }
+            
+            #download { padding-bottom: 0.5rem; }
+
+            .ranking-section {
+                margin-top: 1rem;
+                margin-left: 1.5rem;
+                margin-right: 1.5rem;
+                margin-bottom: 1rem;
+                padding: 1.5rem;
+                width: 98% !important; 
+            }
+
+            .feedback-section { 
+                padding: 1.5rem; 
+                margin: 1.5rem; 
+            }
+                
+            .hero-text { text-align: center; }
+            
+            .hero-text h2 { 
+                font-size: 2.5rem; 
+                text-align: center;
+            }
+            
+            .hero-image { 
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 100%; 
+            } 
+
+            .hero-image > div {
+                width: 100% !important;
+                max-width: 350px !important;
+            }
+
+            .rank-gold td { font-size: 1.4rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <img src="./assets/Logo.png" alt="Logo Missão Reciclar" class="logo-site">
+        <nav>
+            <a href="#download">Download</a>
+            <a href="#ranking">Ranking</a>
+            <a href="#feedback">Feedback</a>
+        </nav>
+    </header>
+
+    <section id="download" class="hero">
+        <div class="hero-text">
+            <h2>Separe o lixo,<br>salve o planeta!</h2>
+            <p>Aprender a reciclar nunca foi tão divertido! Teste sua agilidade separando o lixo corretamente enquanto o jogo fica cada vez mais rápido.</p>
+            <a href="https://drive.google.com/file/d/1UeLtl7oHJxhkIbu8rIxQNb8ezx8RISif/view?usp=sharing" class="btn">Baixar para Android (APK)</a>
+            <a href="https://github.com/MattSena42/missao-reciclar" target="_blank" class="btn btn-secundario">Ver no GitHub</a>
+        </div>
+        <div class="hero-image">
+            <div style="background-color: var(--azul-marinho); padding: 2rem; border-radius: 20px; border: 4px solid var(--laranja); display: inline-block; text-align: center; width: 350px; box-sizing: border-box; box-shadow: 0 10px 20px rgba(0,0,0,0.2);">
+                <p style="font-family: var(--fonte-titulo); font-size: 1.5rem; color: var(--laranja); margin-top: 0; text-shadow: 1px 1px 0px #051e33;">Escaneie para baixar</p>
+                <img src="./assets/QR-Code.png" alt="QR Code" style="max-width: 100%; height: auto; border-radius: 10px;">
+            </div>
+        </div>
+    </section>
+
+    <section id="ranking" class="ranking-section">
+        <h2>Ranking</h2>
+        <div class="arcade-screen">
+            <table class="arcade-table">
+                <thead>
+                    <tr>
+                        <th style="width: 20%;">#</th>
+                        <th style="width: 60%;">NOME</th>
+                        <th style="width: 20%;">PONTOS</th>
+                    </tr>
+                </thead>
+                <tbody id="ranking-body">
+                    <tr><td colspan="3" style="text-align:center; padding: 2rem;">Conectando aos servidores... ♻️</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section id="feedback" class="feedback-section">
+        <h2>O que você achou?</h2>
+        <p>Deixe seu comentário, sugestão ou reporte bugs do jogo.</p>
+        
+        <div style="max-width: 600px; margin: 0 auto; text-align: left;" class="feedback-form">
+            <form action="SUA_URL_DO_FORMSPREE_AQUI" method="POST">
+                <input type="text" name="nome" placeholder="Seu Nome" required>
+                <input type="email" name="email" placeholder="Seu E-mail" required>
+                <textarea name="mensagem" placeholder="Sua mensagem ou reporte de bug..." rows="5" required></textarea>
+                <input type="submit" value="Enviar Feedback">
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <p>Desenvolvido por Leandro, Matheus Rocha, Matheus Sena, Reinaldo e Silmara.</p>
+        <p>ETEC Machado de Assis - Caçapava (2026)</p>
+        <p><a href="https://github.com/MattSena42/missao-reciclar" target="_blank">Código aberto no GitHub</a></p>
+    </footer>
+
+    <script>
+        // Aguarda todo o HTML carregar na tela antes de executar o script
+        document.addEventListener('DOMContentLoaded', function() {
+            
+            // 1. Configurações de Conexão com o Supabase
+            const SUPABASE_URL = 'https://ajcyajyqkfqksrrhqddj.supabase.co';
+            const SUPABASE_KEY = 'sb_publishable_w3tpbdF2wC_cQ9VZ_9f2nA_tCPZyxWD'; 
+            
+            // Monta o link da requisição pedindo apenas nome e pontuação, ordenado do maior para o menor, limitando ao Top 50.
+            const endpoint = `${SUPABASE_URL}/rest/v1/ranking_v2?select=name,score&order=score.desc&limit=50`;
+            const tbody = document.getElementById('ranking-body');
+
+            // 2. Fazendo a requisição (GET) para a nuvem
+            fetch(endpoint, {
+                method: 'GET',
+                headers: {
+                    'apikey': SUPABASE_KEY,
+                    'Authorization': 'Bearer ' + SUPABASE_KEY
+                }
+            })
+            // 3. Recebendo a resposta
+            .then(response => {
+                if (!response.ok) throw new Error('Falha na rede');
+                return response.json(); // Transforma o pacote recebido em um objeto JavaScript compreensível
+            })
+            // 4. Manipulando os dados e desenhando a tabela
+            .then(data => {
+                tbody.innerHTML = ''; // Limpa a mensagem de "Conectando..."
+                
+                // Se o banco estiver vazio
+                if(data.length === 0) {
+                    tbody.innerHTML = '<tr><td colspan="3" style="text-align:center;">Nenhuma pontuação registrada!</td></tr>';
+                    return;
+                }
+                
+                // Percorre a lista de jogadores devolvida pelo banco
+                data.forEach((jogador, index) => {
+                    const posicao = index + 1;
+                    let classeRanking = '';
+                    let posTexto = posicao + 'º';
+                    
+                    // Lógica para destacar o pódio
+                    if (posicao === 1) { classeRanking = 'rank-gold'; posTexto = '1ST'; }
+                    else if (posicao === 2) { classeRanking = 'rank-silver'; posTexto = '2ND'; }
+                    else if (posicao === 3) { classeRanking = 'rank-bronze'; posTexto = '3RD'; }
+                    else { posTexto = posicao + 'TH'; }
+
+                    // Cria uma nova linha (tr) na tabela
+                    const tr = document.createElement('tr');
+                    if(classeRanking) tr.className = classeRanking; // Aplica a cor do pódio se existir
+                    
+                    // Preenche as colunas (td) com os dados
+                    tr.innerHTML = `
+                        <td>${posTexto}</td>
+                        <td>${jogador.name || 'Anônimo'}</td>
+                        <td>${jogador.score}</td>
+                    `;
+                    tbody.appendChild(tr); // Adiciona a linha visualmente na tabela do site
+                });
+            })
+            // 5. Tratamento de Erros (Cai aqui se o Supabase cair ou o jogador estiver sem internet)
+            .catch(error => {
+                console.error('Erro ao buscar ranking:', error);
+                tbody.innerHTML = '<tr><td colspan="3" style="text-align:center; color: #ff5d28;">⚠️ Erro de conexão. Tente novamente mais tarde.</td></tr>';
+            });
+        });
+    </script>
+</body>
+</html>

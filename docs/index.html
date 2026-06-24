@@ -47,6 +47,7 @@
         
         body {
             font-family: var(--fonte-texto); 
+            font-size: 18px;
             background-color: var(--azul-claro); 
             background-image: url('./assets/desktop.png');
             background-size: cover; 
@@ -122,14 +123,16 @@
             display: flex;
             flex-wrap: wrap; /* Permite que os itens quebrem linha no celular */
             align-items: center;
-            justify-content: space-between; 
-            gap: 2rem;
+            justify-content: center; /* Aproxima os elementos no centro */
+            gap: 3rem;
+            max-width: 950px; /* Reduzido de 1200px para impedir que os itens fujam para os cantos */
+            margin: 0 auto;
         }
 
         .hero-text {
             flex: 1;
             min-width: 300px;
-            text-align: center;
+            text-align: left; /* Traz o texto para o alinhamento padrão mais legível */
         }
 
         .hero-text h2 {
@@ -139,10 +142,15 @@
             margin-bottom: 1rem;
         }
 
+        .hero-text p {
+            font-size: 1.25rem; /* Aumenta a fonte especificamente do parágrafo da hero */
+            margin-bottom: 1.5rem;
+        }
+
         .hero-image {
-            flex: 1;
+            flex: 0; /* Remove a obrigação de ocupar 50% da tela */
             min-width: 300px;
-            text-align: right; 
+            text-align: center; /* Mantém o QR code centralizado em relação ao bloco dele */
         }
 
         /* Estilização dos Botões */
